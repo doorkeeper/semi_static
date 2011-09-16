@@ -1,0 +1,6 @@
+<% @articles.each do |article| %>
+  <article>
+    <h1><%= link_to article, article %></h1>
+    <section><%= article.body.render(self).html_safe %></section>
+  </article>
+<% end %>

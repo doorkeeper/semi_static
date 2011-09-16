@@ -7,9 +7,9 @@ Gem::Specification.new do |s|
   s.version     = SemiStatic::VERSION
   s.authors     = ["Paul McMahon"]
   s.email       = ["paul@mobalean.com"]
-  s.homepage    = ""
-  s.summary     = %q{TODO: Write a gem summary}
-  s.description = %q{TODO: Write a gem description}
+  s.homepage    = "http://www.mobalean.com"
+  s.summary     = %q{Text file based CMS for Rails}
+  s.description = %q{Easily create content for your Rails apps using just textfiles}
 
   s.rubyforge_project = "semi_static"
 
@@ -17,4 +17,12 @@ Gem::Specification.new do |s|
   s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
   s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
   s.require_paths = ["lib"]
+
+  s.add_dependency 'rails', '~> 3.0'
+  s.add_dependency 'rdiscount'
+  s.add_dependency 'babosa'
+  s.add_dependency 'tilt'
+
+  s.add_development_dependency 'rspec', '~> 2.5.0'
+  s.add_development_dependency 'steak'
 end
