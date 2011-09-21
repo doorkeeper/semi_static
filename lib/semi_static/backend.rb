@@ -6,7 +6,7 @@ class SemiStatic::Backend < SemiStatic::Page
   end
 
   def all(page_type)
-    unless @cache.key?(page_type)
+    if !@cache.key?(page_type) || !Rails.application.config.cache_classes
       path = File.join(@root,ActiveModel::Naming.plural(page_type), "*")
       @cache[page_type] = Dir.glob(path).map do |f|
         yaml, body = File.read(f).split("\n...\n", 2)
