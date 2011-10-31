@@ -11,4 +11,9 @@ feature 'custom controllers' do
     visit faq_path(:id => "管理端末とはなんですか？")
     find("h1").text.should == "チェックイン端末とはなんですか？" 
   end
+
+  scenario "namespaced controller" do
+    visit admin_faqs_path
+    find("body").text.should == "Namespaced"
+  end
 end

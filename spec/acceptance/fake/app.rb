@@ -14,5 +14,8 @@ app.routes.draw do
   semi_static_for :news
   semi_static_for :event_planning_tips
   semi_static_for :faqs, :controller => :faqs
+  namespace :admin do
+    semi_static_for :faqs, :controller => :faqs
+  end
 end
 class ApplicationController < ActionController::Base; end
