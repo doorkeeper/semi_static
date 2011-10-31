@@ -13,5 +13,6 @@ app.initialize!
 app.routes.draw do
   semi_static_for :news
   semi_static_for :event_planning_tips
+  semi_static_for :faqs, :controller => :faqs
 end
 class ApplicationController < ActionController::Base; end
