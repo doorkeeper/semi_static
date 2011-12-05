@@ -14,6 +14,7 @@ module SemiStatic
   autoload :Article, "semi_static/article"
   autoload :Page, "semi_static/page"
   autoload :Backend, "semi_static/backend"
+  autoload :TiltWrapper, "semi_static/tilt_wrapper"
 
   class << self
     attr_writer :backend

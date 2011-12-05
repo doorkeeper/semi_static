@@ -11,8 +11,7 @@ class SemiStatic::Backend < SemiStatic::Page
       @cache[page_type] = Dir.glob(path).map do |f|
         yaml, body = File.read(f).split("\n...\n", 2)
         h = YAML.load(yaml)
-        template = Tilt.new(f) {|template| body }
-        page_type.new(template, h)
+        page_type.new(SemiStatic::TiltWrapper.template(f,body), h)
       end
     end
     @cache[page_type]
