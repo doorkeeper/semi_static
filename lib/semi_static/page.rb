@@ -31,4 +31,7 @@ class SemiStatic::Page
     title.to_s
   end
 
+  def render(source)
+    body.render(source).html_safe
+  end
 end

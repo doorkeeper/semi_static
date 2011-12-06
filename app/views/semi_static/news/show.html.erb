@@ -1,5 +1,5 @@
 <article>
   <h1><%= @article.title %></h1>
   <date><%= l(@article.published_at, :format => :long) %></date>
-  <section><%= @article.body.render(self).html_safe %></section>
+  <section><%= @article.render(self) %></section>
 </article>
