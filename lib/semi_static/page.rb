@@ -3,6 +3,7 @@ class SemiStatic::Page
 
   extend ActiveModel::Naming
   attr_accessor :title, :body
+  attr_writer :slug
 
   def self.all
     SemiStatic.backend.all(self)
@@ -24,7 +25,11 @@ class SemiStatic::Page
   end
 
   def to_param
-    title.to_slug.normalize.to_s
+    slug
+  end
+
+  def slug
+    @slug || title.to_slug.normalize.to_s
   end
 
   def to_s

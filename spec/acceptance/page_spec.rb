@@ -24,4 +24,9 @@ feature 'page' do
     page.find("h2").text.should == "1 + 1 = 2"
     page.should have_css "img"
   end
+
+  scenario 'non standard slug' do
+    visit "/event_planning_tips/non-standard-slug"
+    page.find("h1").text.should == "Title is different than slug"
+  end
 end
