@@ -1,3 +1,4 @@
+require 'active_model/naming'
 class SemiStatic::Backend < SemiStatic::Page
 
   def initialize(root)

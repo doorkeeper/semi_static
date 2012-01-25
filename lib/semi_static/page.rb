@@ -1,7 +1,11 @@
+require 'active_model/naming'
+require 'active_model/conversion'
+
 class SemiStatic::Page
   autoload :WithLocale, "semi_static/page/with_locale"
 
   extend ActiveModel::Naming
+  extend ActiveModel::Conversion
   attr_accessor :title, :body
   attr_writer :slug
 

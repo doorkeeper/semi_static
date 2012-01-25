@@ -1,4 +1,3 @@
-require 'active_model/naming'
 require 'active_support/core_ext/module/delegation.rb'
 require 'active_support/core_ext/string/output_safety'
 require 'babosa'

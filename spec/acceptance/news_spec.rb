@@ -18,7 +18,6 @@ feature 'news' do
 
   scenario 'show non-existant page' do
     visit "/news/1999/1/23/foo"
-    page.find("h1").text.should == "Routing Error"
-    page.find("pre").text.should == "/news/1999/1/23/foo"
+    page.status_code.should == 404
   end
 end
