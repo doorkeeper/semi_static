@@ -14,6 +14,11 @@ feature 'page' do
     page.find("section h2").text.should == "1. 無断に写真や動画の撮影、公開しない"
   end
 
+  scenario 'show multibyte bang' do
+    visit "/event_planning_tips/#{CGI.escape("イベントやろう")}"
+    page.find("h1").text.should == "イベントやろう！"
+  end
+
   scenario 'show erb page' do
     visit "/event_planning_tips/erb-test"
     page.find(".erb").text.should == "1 + 1 = 2"

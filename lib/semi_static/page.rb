@@ -1,3 +1,4 @@
+# encoding: UTF-8
 require 'active_model/naming'
 require 'active_model/conversion'
 
@@ -33,7 +34,7 @@ class SemiStatic::Page
   end
 
   def slug
-    @slug || title.to_slug.normalize.to_s
+    @slug || title.to_slug.normalize.to_s.gsub("！", "")
   end
 
   def to_s
