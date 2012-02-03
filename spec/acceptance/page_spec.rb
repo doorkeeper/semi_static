@@ -16,6 +16,7 @@ feature 'page' do
 
   scenario 'show multibyte bang' do
     visit "/event_planning_tips/#{CGI.escape("イベントやろう")}"
+    current_path.should == "/event_planning_tips/#{CGI.escape("イベントやろう")}"
     page.find("h1").text.should == "イベントやろう！"
   end
 
@@ -38,5 +39,11 @@ feature 'page' do
   scenario 'slug is not validly encoded' do
     visit "/event_planning_tips/%8e%8f"
     page.status_code.should == 404
+  end
+
+  scenario 'redirect in case of double escape' do
+    visit "/event_planning_tips/#{CGI.escape(CGI.escape("イベントやろう"))}"
+    current_path.should == "/event_planning_tips/#{CGI.escape("イベントやろう")}"
+    page.find("h1").text.should == "イベントやろう！"
   end
 end

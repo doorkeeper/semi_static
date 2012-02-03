@@ -14,4 +14,6 @@ describe SemiStatic::Page do
   it { @english_page.to_s.should == "foo bar" }
   it { described_class.new(nil, {}).to_s.should == "" }
   it { SemiStatic::Page.find("foo-bar").should == @english_page }
+  it { SemiStatic::Page.find("ほげ").should == @japanese_page }
+  it { SemiStatic::Page.find(CGI.escape("ほげ")).should == @japanese_page }
 end

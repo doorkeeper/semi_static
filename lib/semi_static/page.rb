@@ -19,6 +19,7 @@ class SemiStatic::Page
   end
 
   def self.find(param)
+    param = CGI.unescape(param) if param =~ /%/
     all.find {|a| a.to_param == param }
   end
 
