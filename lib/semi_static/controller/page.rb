@@ -4,10 +4,16 @@ module SemiStatic::Controller::Page
   end
 
   def show
-    raise ActionController::RoutingError.new("Invalid Encoded URL") unless params[:id].valid_encoding?
+    unless params[:id].valid_encoding?
+      raise ActionController::RoutingError.new("Invalid Encoded URL")
+    end
     @article = resource.find(params[:id])
-    raise ActionController::RoutingError.new(url_for(:id => params[:id], :only_path => true)) unless @article
-    redirect_to @article unless params[:id] == @article.to_param
+    unless @article
+      raise ActionController::RoutingError.new(url_for(:id => params[:id], :only_path => true))
+    end
+    unless params[:id] == @article.to_param
+      redirect_to @article, :status => :moved_permanently
+    end
   end
 
   private
