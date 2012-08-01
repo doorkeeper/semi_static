@@ -1,7 +1,10 @@
+Tilt.register Tilt::RedcarpetTemplate::Redcarpet2, 'md' # hack to prefere redcarpet2
+
 class SemiStatic::TiltWrapper
   class << self
     def template(filename, body)
-      wrap Tilt.new(filename) {|t| body }
+      t = Tilt.new(filename, nil, :renderer => Redcarpet::Render::HTML.new(:hard_wrap => true)) {|t| body }
+      wrap t
     end
 
     private

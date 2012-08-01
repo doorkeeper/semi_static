@@ -18,7 +18,10 @@ describe SemiStatic::Backend do
       before { @item = @all.first }
       it { @item.title.should == "請求書のダウンロードが可能になりました" }
       it { @item.published_at.should == Date.parse("2011-07-26") }
-      it { @item.body.should be_instance_of Tilt::RDiscountTemplate }
+      context "body" do
+        subject { @item.body.render(self) }
+        it { should include("<br>") } 
+      end
     end
   end
 end

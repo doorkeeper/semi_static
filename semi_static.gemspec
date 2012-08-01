@@ -19,7 +19,7 @@ Gem::Specification.new do |s|
   s.require_paths = ["lib"]
 
   s.add_dependency 'rails', '~> 3.0'
-  s.add_dependency 'rdiscount'
+  s.add_dependency 'redcarpet'
   s.add_dependency 'babosa'
   s.add_dependency 'tilt'
 

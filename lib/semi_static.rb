@@ -2,7 +2,7 @@ require 'active_support/core_ext/module/delegation.rb'
 require 'active_support/core_ext/string/output_safety'
 require 'babosa'
 require 'rails'
-require 'rdiscount'
+require 'redcarpet'
 require 'tilt'
 require 'yaml'
 
