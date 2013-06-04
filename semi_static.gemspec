@@ -23,6 +23,6 @@ Gem::Specification.new do |s|
   s.add_dependency 'babosa'
   s.add_dependency 'tilt'
 
-  s.add_development_dependency 'rspec', '~> 2.5.0'
-  s.add_development_dependency 'steak'
+  s.add_development_dependency 'rspec-rails', '~> 2.0'
+  s.add_development_dependency 'capybara', '~> 2.1'
 end
