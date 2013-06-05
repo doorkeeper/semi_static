@@ -38,7 +38,7 @@ feature 'page' do
 
   scenario 'slug is not validly encoded' do
     visit "/event_planning_tips/%8e%8f"
-    page.status_code.should == 404
+    page.status_code.should == 400
   end
 
   scenario 'redirect in case of double escape' do
