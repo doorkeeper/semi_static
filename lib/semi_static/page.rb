@@ -45,4 +45,8 @@ class SemiStatic::Page
   def render(source)
     body.render(source).html_safe
   end
+
+  def persisted?
+    true
+  end
 end
