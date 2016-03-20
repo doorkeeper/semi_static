@@ -3,7 +3,8 @@ class FaqsController < SemiStatic::PageController
   def show
     case params[:id]
     when "管理端末とはなんですか？"
-      redirect_to :id => "チェックイン端末とはなんですか？", :status => 301
+      article = resource.all.find {|a| a.title == "チェックイン端末とはなんですか？" }
+      redirect_to :id => article.to_param, :status => 301
     else
       super
     end

@@ -1,5 +1,3 @@
-Tilt.register Tilt::RedcarpetTemplate::Redcarpet2, 'md' # hack to prefere redcarpet2
-
 class SemiStatic::TiltWrapper
   class << self
     def template(filename, body)
