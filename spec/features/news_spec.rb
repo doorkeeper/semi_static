@@ -1,7 +1,7 @@
 # encoding: UTF-8
 require File.expand_path(File.dirname(__FILE__) + '/acceptance_helper')
 
-feature 'news' do
+feature 'news', type: :feature do
   scenario "index" do
     visit news_index_path
     page.find("h1 a").text.should == "請求書のダウンロードが可能になりました"

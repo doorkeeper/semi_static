@@ -1,7 +1,7 @@
 # encoding: UTF-8
 require File.expand_path(File.dirname(__FILE__) + '/acceptance_helper')
 
-feature 'page' do
+feature 'page', type: :feature do
   scenario "index" do
     visit '/event_planning_tips'
     page.should have_css("h1 a")
