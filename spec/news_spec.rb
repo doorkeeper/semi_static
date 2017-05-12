@@ -8,5 +8,5 @@ describe SemiStatic::News do
   end
 
   it { expect(@page.to_param).to eq("2001/1/31/ほげ") }
-  it { expect(News.find("2001/1/31/ほげ")).to eq(@page) }
+  it { expect(SemiStatic::News.find("2001/1/31/ほげ")).to eq(@page) }
 end
