@@ -5,7 +5,7 @@ describe SemiStatic::Page do
   before do
     @japanese_page = described_class.new("body", :title => "ほげ")
     @english_page = described_class.new("body", :title => "foo bar") 
-    SemiStatic.backend = mock(:all => [ @japanese_page, @english_page ])
+    SemiStatic.backend = double(:all => [ @japanese_page, @english_page ])
   end
 
   it { @japanese_page.to_param.should == "ほげ" }
