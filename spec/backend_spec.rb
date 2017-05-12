@@ -12,15 +12,15 @@ describe SemiStatic::Backend do
 
   context "all" do
     before { @all = @backend.all(News) }
-    it { @all.size.should == 1 }
+    it { expect(@all.size).to eq(1) }
 
     context "item" do
       before { @item = @all.first }
-      it { @item.title.should == "請求書のダウンロードが可能になりました" }
-      it { @item.published_at.should == Date.parse("2011-07-26") }
+      it { expect(@item.title).to eq("請求書のダウンロードが可能になりました") }
+      it { expect(@item.published_at).to eq(Date.parse("2011-07-26")) }
       context "body" do
         subject { @item.body.render(self) }
-        it { should include("<br>") } 
+        it { is_expected.to include("<br>") } 
       end
     end
   end

@@ -8,12 +8,12 @@ describe SemiStatic::Page do
     SemiStatic.backend = double(:all => [ @japanese_page, @english_page ])
   end
 
-  it { @japanese_page.to_param.should == "ほげ" }
-  it { @japanese_page.to_s.should == "ほげ" }
-  it { @english_page.to_param.should == "foo-bar" }
-  it { @english_page.to_s.should == "foo bar" }
-  it { described_class.new(nil, {}).to_s.should == "" }
-  it { SemiStatic::Page.find("foo-bar").should == @english_page }
-  it { SemiStatic::Page.find("ほげ").should == @japanese_page }
-  it { SemiStatic::Page.find(CGI.escape("ほげ")).should == @japanese_page }
+  it { expect(@japanese_page.to_param).to eq("ほげ") }
+  it { expect(@japanese_page.to_s).to eq("ほげ") }
+  it { expect(@english_page.to_param).to eq("foo-bar") }
+  it { expect(@english_page.to_s).to eq("foo bar") }
+  it { expect(described_class.new(nil, {}).to_s).to eq("") }
+  it { expect(SemiStatic::Page.find("foo-bar")).to eq(@english_page) }
+  it { expect(SemiStatic::Page.find("ほげ")).to eq(@japanese_page) }
+  it { expect(SemiStatic::Page.find(CGI.escape("ほげ"))).to eq(@japanese_page) }
 end

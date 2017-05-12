@@ -7,6 +7,6 @@ describe SemiStatic::News do
     SemiStatic.backend = double(:all => [ @page ])
   end
 
-  it { @page.to_param.should == "2001/1/31/ほげ" }
-  it { News.find("2001/1/31/ほげ").should == @page }
+  it { expect(@page.to_param).to eq("2001/1/31/ほげ") }
+  it { expect(News.find("2001/1/31/ほげ")).to eq(@page) }
 end
