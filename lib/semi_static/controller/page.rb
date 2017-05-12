@@ -19,6 +19,6 @@ module SemiStatic::Controller::Page
   private
 
   def resource
-    env["semi_static.mapping"]
+    request.env["semi_static.mapping"]
   end
 end
