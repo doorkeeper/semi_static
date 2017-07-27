@@ -12,7 +12,7 @@ module SemiStatic::Controller::Page
       raise ActionController::RoutingError.new(url_for(:id => params[:id], :only_path => true))
     end
     unless params[:id] == @article.to_param
-      redirect_to @article, :status => :moved_permanently
+      redirect_to({id: @article}, status: :moved_permanently)
     end
   end
 
