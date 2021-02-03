@@ -1,4 +1,5 @@
 require File.expand_path(File.dirname(__FILE__) + "/../spec_helper")
+ENV['RAILS_ENV'] ||= 'test'
 require File.expand_path(File.dirname(__FILE__) + "/fake/app")
 require 'capybara/rspec'
 
