@@ -5,6 +5,7 @@ require "semi_static/version"
 Gem::Specification.new do |s|
   s.name        = "semi_static"
   s.version     = SemiStatic::VERSION
+  s.licenses    = ["MIT"]
   s.authors     = ["Paul McMahon"]
   s.email       = ["paul@mobalean.com"]
   s.homepage    = "http://www.mobalean.com"
